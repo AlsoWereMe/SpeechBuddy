@@ -1,0 +1,50 @@
+# special txt
+api_key.txt
+project_prompt.txt
+
+# compile files
+*.o
+*.pyc
+*.class
+*.jar
+*.war
+*.ear
+
+# logs
+*.log
+
+# temporary files
+*~
+*.swp
+*.tmp
+
+# directories created by build
+build/
+dist/
+out/
+
+# dependencies
+node_modules/
+vendor/
+.bundle/
+
+# configurations
+.env
+.config
+
+# Python
+__pycache__/
+*.egg-info/
+
+# Node.js
+node_modules/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# VS Code
+.vscode/
+
