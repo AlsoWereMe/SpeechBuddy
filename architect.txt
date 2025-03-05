@@ -1,0 +1,69 @@
+├── 前端层
+│   ├── WebRTC音视频采集
+│   ├── AI虚拟形象渲染层（D-ID API）
+│   ├── 实时反馈看板（眼神/情绪检测）
+│   └── 轻量级状态管理（Zustand）
+├── 业务逻辑层
+│   ├── 混合评分引擎
+│   │   ├── 规则引擎（Pyke/KRULES）
+│   │   └── AI评分（DeepSeek微调）
+│   ├── 流程控制器
+│   └── 成本控制网关
+├── AI服务层
+│   ├── 本地处理模块
+│   │   ├── OpenCV眼部检测
+│   │   └── MediaPipe情绪分析
+│   └── 云端处理模块
+│       ├── D-ID虚拟形象生成
+│       └── Whisper语音识别
+└── 基础设施层
+    ├── 轻量级ORM（SQLModel）
+    ├── 异步任务队列（Celery + Redis）
+    └── 缓存层（Redis）
+
+眼神接触检测：使用MediaPipe Face Mesh + 自定义视线向量计算
+
+实时情绪分析：集成DeepFace轻量级库（本地推理）
+
+混合评分系统：
+
+    规则引擎：基于Pyparsing自定义DSL语法
+
+    AI评分：DeepSeek-7B微调（使用LoRA技术）
+
+成本控制：
+
+    浏览器端TensorFlow.js处理初级特征提取
+
+    本地FFmpeg处理音视频预处理
+
+SpeechBuddy/
+├── client/                  # 前端
+│   ├── public/              # 静态资源
+│   ├── src/
+│   │   ├── lib/
+│   │   │   ├── webrtc/      # WebRTC封装
+│   │   │   └── cv/          # 计算机视觉处理
+│   │   ├── components/      # React组件
+│   │   │   ├── Simulation/
+│   │   │   └── Dashboard/
+│   │   ├── stores/          # Zustand状态管理
+│   │   └── assets/          # 本地资源
+├── server/                  # 后端
+│   ├── app/
+│   │   ├── core/            # 核心逻辑
+│   │   │   ├── scoring/     # 评分系统
+│   │   │   └── ai/          # AI服务接口
+│   │   ├── models/          # SQLModel定义
+│   │   ├── routers/         # API路由
+│   │   └── utils/           # 工具类
+│   ├── migrations/          # 数据库迁移脚本
+│   └── tests/               # 测试用例
+├── ai_services/             # AI本地服务
+│   ├── eye_tracking/        # 眼神检测模型
+│   └── emotion_analysis/    # 情绪分析模型
+├── docs/                    # 文档
+├── scripts/                 # 部署脚本
+├── .env                     # 环境变量
+├── requirements.txt         # Python依赖
+└── package.json             # 前端依赖
