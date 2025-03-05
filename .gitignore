@@ -1,3 +1,7 @@
+# special txt
+api_key.txt
+project_prompt.txt
+
 # compile files
 *.o
 *.pyc
@@ -43,3 +47,4 @@ Thumbs.db
 
 # VS Code
 .vscode/
+
